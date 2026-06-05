@@ -1,0 +1,8 @@
+{
+  "name": "Social Content Generator",
+  "description": "Cross-platform social media content generator for LinkedIn, Twitter, Instagram, Facebook, and TikTok, with multi-language translation and AI-tailored or custom-uploaded visuals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
