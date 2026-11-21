@@ -464,11 +464,11 @@ export default function App() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/50 text-rose-800 dark:text-rose-250 p-4 rounded-xl flex items-start gap-3 shadow-xs"
+              className="bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/50 text-rose-800 dark:text-rose-200 p-4 rounded-xl flex items-start gap-3 shadow-xs"
             >
-              <AlertCircle className="w-5 h-5 text-rose-600 dark:text-rose-450 shrink-0 mt-0.5" />
+              <AlertCircle className="w-5 h-5 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
               <div>
-                <span className="font-bold text-xs uppercase tracking-wider">{t.systemUpdate}</span>
+                <span className="text-xs">{t.systemUpdate}</span>
                 <p className="text-xs text-rose-700 dark:text-rose-300 mt-0.5">{globalError}</p>
               </div>
             </motion.div>
@@ -479,11 +479,11 @@ export default function App() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-250 dark:border-emerald-900/50 text-emerald-800 dark:text-emerald-205 p-4 rounded-xl flex items-start gap-3 shadow-xs"
+              className="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/50 text-emerald-800 dark:text-emerald-200 p-4 rounded-xl flex items-start gap-3 shadow-xs"
             >
               <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
               <div>
-                <span className="font-bold text-xs uppercase tracking-wider">{t.successTitle}</span>
+                <span className="text-xs">{t.successTitle}</span>
                 <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-0.5">{successMessage}</p>
               </div>
             </motion.div>
@@ -535,10 +535,10 @@ export default function App() {
                 {activeDraft && safeActiveDraftPosts ? (
                   <div className="border-t border-slate-200 dark:border-slate-800 pt-6 flex flex-col gap-4">
                     <div>
-                      <h3 className="text-sm font-display font-black text-slate-850 dark:text-slate-100 uppercase tracking-wider">
+                      <h3 className="text-sm text-slate-850 dark:text-slate-100">
                         📂 {t.previewTitle}
                       </h3>
-                      <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5 max-w-2xl truncate font-semibold">
+                      <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5 max-w-2xl truncate">
                         {t.basedOnIdea} "{activeDraft.idea}"
                       </p>
                     </div>
@@ -560,12 +560,12 @@ export default function App() {
                 ) : (
                   <div className="bg-white dark:bg-slate-900 rounded-2xl border border-dashed border-slate-300 dark:border-slate-800 py-16 px-6 text-center shadow-xs flex flex-col items-center">
                     <div className="p-4 bg-slate-50 dark:bg-slate-850 rounded-full text-slate-400 mb-4 border border-slate-100 dark:border-slate-800">
-                      <Sparkles className="w-8 h-8 text-amber-500 animate-pulse" />
+                      <Sparkles className="w-8 h-8 text-amber-600" />
                     </div>
-                    <h3 className="font-display font-bold text-slate-800 dark:text-slate-200 text-sm uppercase tracking-wider">
+                    <h3 className="text-slate-800 dark:text-slate-200 text-sm">
                       {currentLang === 'pt-PT' ? 'Pronto para criar?' : currentLang === 'es' ? '¿Listo para crear?' : 'Ready to compile?'}
                     </h3>
-                    <p className="text-xs text-slate-400 dark:text-slate-500 mt-1.5 max-w-sm leading-relaxed font-medium">
+                    <p className="text-xs text-slate-400 dark:text-slate-500 mt-1.5 max-w-sm leading-relaxed">
                       {currentLang === 'pt-PT' 
                         ? 'Escreva um conceito central ou tema acima para rascunhar instantaneamente publicações e imagens em múltiplos canais!'
                         : currentLang === 'es'
@@ -583,9 +583,9 @@ export default function App() {
       </main>
 
       <footer className="border-t border-slate-200 dark:border-slate-850 bg-white dark:bg-slate-900 py-6 mt-12 select-none transition-all">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 text-center text-xs text-slate-400 dark:text-slate-505 font-medium flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© 2026 Social Content Generator • Swiss Multi-Channel Social Suite</p>
-          <p className="lowercase">{t.appName} // portugal • english • españa</p>
+        <div className="max-w-7xl mx-auto px-4 md:px-8 text-center text-xs text-slate-400 dark:text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p>© 2026 Ressoa by amplia · Amplia Solutions</p>
+          <p>Português · English · Español</p>
         </div>
       </footer>
     </div>

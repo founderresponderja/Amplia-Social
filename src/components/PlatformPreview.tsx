@@ -103,7 +103,7 @@ export default function PlatformPreview({
       id: 'instagram',
       name: 'Instagram',
       badge: '📸',
-      color: 'bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white',
+      color: 'bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900',
       desc: 'Grid Showcase • Aspect 1:1',
       aspectRatio: '1:1',
       style: 'aspect-square',
@@ -138,14 +138,14 @@ export default function PlatformPreview({
     <div className="flex flex-col gap-6">
       
       {/* Tab Controls */}
-      <div className="bg-slate-100 dark:bg-slate-850 p-1.5 rounded-xl border border-slate-205 dark:border-slate-800 flex flex-wrap gap-1 shadow-inner select-none">
+      <div className="bg-slate-100 dark:bg-slate-850 p-1.5 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-wrap gap-1 shadow-inner select-none">
         <button
           onClick={() => setActiveTab('all')}
-          className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
-            activeTab === 'all'
-              ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs font-bold'
-              : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-          }`}
+          className={`px-3 py-1.5 text-xs rounded-lg transition-all cursor-pointer ${
+ activeTab === 'all'
+ ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-xs'
+ : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
+ }`}
         >
           🌎 {t.allFeeds}
         </button>
@@ -153,11 +153,11 @@ export default function PlatformPreview({
           <button
             key={platform.id}
             onClick={() => setActiveTab(platform.id)}
-            className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
-              activeTab === platform.id
-                ? 'bg-white dark:bg-slate-950 text-slate-900 dark:text-white shadow-xs font-bold'
-                : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-            }`}
+            className={`px-3 py-1.5 text-xs rounded-lg transition-all cursor-pointer ${
+ activeTab === platform.id
+ ? 'bg-white dark:bg-slate-950 text-slate-900 dark:text-white shadow-xs'
+ : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
+ }`}
           >
             <span>{platform.name}</span>
           </button>
@@ -319,12 +319,12 @@ function PlatformCard({
       {/* Core card banner header */}
       <div className="p-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-900">
         <div className="flex items-center space-x-3">
-          <div className={`w-8 h-8 rounded-lg ${color} flex items-center justify-center font-black text-sm select-none shadow-xs`}>
+          <div className={`w-8 h-8 rounded-lg ${color} flex items-center justify-center text-sm select-none shadow-xs`}>
             {badge}
           </div>
           <div>
-            <h4 className="text-xs font-bold text-slate-805 dark:text-slate-200">{name}</h4>
-            <p className="text-[10px] text-slate-400 dark:text-slate-500 font-medium">{desc}</p>
+            <h4 className="text-xs text-slate-800 dark:text-slate-200">{name}</h4>
+            <p className="text-xs text-slate-400 dark:text-slate-500">{desc}</p>
           </div>
         </div>
         <button className="p-1 text-slate-400 hover:text-slate-600 rounded">
@@ -336,25 +336,25 @@ function PlatformCard({
       <div className="px-4 pb-3 pt-4 flex-1 select-text">
         {isEditing ? (
           <div className="flex flex-col gap-2">
-            <span className="text-[10px] uppercase font-bold text-slate-400">{t.editCopyTitle}</span>
+            <span className="text-xs text-slate-400">{t.editCopyTitle}</span>
             <textarea
               value={editedText}
               onChange={(e) => setEditedText(e.target.value)}
               className="w-full min-h-[140px] p-3 text-xs border border-slate-250 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-1 focus:ring-amber-500 rounded-lg text-slate-800 dark:text-slate-100 leading-relaxed font-sans"
               maxLength={maxLength}
             />
-            <div className="flex justify-between items-center text-[10px] px-1 text-slate-400">
+            <div className="flex justify-between items-center text-xs px-1 text-slate-400">
               <span>{maxLength - editedText.length} characters left</span>
               <div className="flex gap-1.5">
                 <button
                   onClick={() => setIsEditing(false)}
-                  className="px-2.5 py-1 border border-slate-202 dark:border-slate-700 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded font-semibold cursor-pointer"
+                  className="px-2.5 py-1 border border-slate-200 dark:border-slate-700 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded cursor-pointer"
                 >
                   {t.cancelBtn}
                 </button>
                 <button
                   onClick={handleSaveEdit}
-                  className="px-3 py-1 bg-slate-950 dark:bg-slate-100 text-white dark:text-slate-950 rounded font-bold cursor-pointer"
+                  className="px-3 py-1 bg-slate-950 dark:bg-slate-100 text-white dark:text-slate-950 rounded cursor-pointer"
                 >
                   {t.saveBtn}
                 </button>
@@ -369,14 +369,14 @@ function PlatformCard({
             <div className="flex justify-end pt-2 border-t border-slate-100 dark:border-slate-800 gap-1.5 mt-3">
               <button
                 onClick={() => { setEditedText(draft.content); setIsEditing(true); }}
-                className="p-1.5 text-slate-400 hover:text-slate-705 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded transition-all cursor-pointer"
+                className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded transition-all cursor-pointer"
                 title={t.editCopyTitle}
               >
                 <Edit3 className="w-3.5 h-3.5" />
               </button>
               <button
                 onClick={handleCopy}
-                className="px-2.5 py-1 text-[11px] font-bold text-slate-600 dark:text-slate-350 hover:text-slate-905 dark:hover:text-white bg-slate-101 hover:bg-slate-150 dark:bg-slate-800 dark:hover:bg-slate-750 border border-slate-200/40 dark:border-slate-700/50 rounded-md transition-all cursor-pointer flex items-center gap-1"
+                className="px-2.5 py-1 text-xs text-slate-600 dark:text-slate-350 hover:text-slate-900 dark:hover:text-white bg-slate-100 hover:bg-slate-150 dark:bg-slate-800 dark:hover:bg-slate-750 border border-slate-200/40 dark:border-slate-700/50 rounded-md transition-all cursor-pointer flex items-center gap-1"
               >
                 {isCopied ? (
                   <>
@@ -397,14 +397,14 @@ function PlatformCard({
 
       {/* AI translation bar */}
       <div className="mx-4 mb-3.5 p-2 bg-slate-50 dark:bg-slate-850 border border-slate-150 dark:border-slate-800 rounded-xl flex items-center justify-between gap-1.5 select-none">
-        <span className="text-[9.5px] font-bold text-slate-600 dark:text-slate-400 uppercase flex items-center gap-1">
-          <Globe className="w-3 h-3 text-amber-500" /> {t.aiTranslateLabel}
+        <span className="text-[9.5px] text-slate-600 dark:text-slate-400 flex items-center gap-1">
+          <Globe className="w-3 h-3 text-amber-600" /> {t.aiTranslateLabel}
         </span>
         <div className="flex items-center gap-1.5">
           <select
             value={targetTransLang}
             onChange={(e) => setTargetTransLang(e.target.value)}
-            className="px-2 py-0.5 text-[10px] bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded cursor-pointer"
+            className="px-2 py-0.5 text-xs bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded cursor-pointer"
           >
             {TRANSLATION_LANGUAGES.map((tl) => (
               <option key={tl.code} value={tl.code}>{tl.flag} {tl.label}</option>
@@ -413,7 +413,7 @@ function PlatformCard({
           <button
             onClick={handleTranslateClick}
             disabled={isTranslating}
-            className="px-2 py-0.5 text-[10px] bg-slate-950 hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-950 dark:hover:bg-white text-white rounded font-bold transition-all flex items-center gap-1 cursor-pointer disabled:opacity-50"
+            className="px-2 py-0.5 text-xs bg-slate-950 hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-950 dark:hover:bg-white text-white rounded transition-all flex items-center gap-1 cursor-pointer disabled:opacity-50"
           >
             {isTranslating ? (
               <Loader2 className="w-2.5 h-2.5 animate-spin" />
@@ -425,15 +425,15 @@ function PlatformCard({
       {/* Scheduling block */}
       <div className="mx-4 mb-4 p-3 bg-slate-50 dark:bg-slate-850 border border-slate-150 dark:border-slate-800 rounded-xl flex flex-col gap-2 select-none">
         <div className="flex items-center justify-between">
-          <span className="text-[10px] font-bold text-slate-450 dark:text-slate-405 tracking-wider uppercase">
+          <span className="text-xs text-slate-450 dark:text-slate-400">
             📅 {t.schedulerTitle}
           </span>
           {platformScheduledTime ? (
-            <span className="text-[9px] text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded font-black">
+            <span className="text-xs text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded">
               {t.scheduledBadge}
             </span>
           ) : (
-            <span className="text-[9px] text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded font-semibold">
+            <span className="text-xs text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
               {t.draftBadge}
             </span>
           )}
@@ -443,12 +443,12 @@ function PlatformCard({
             type="datetime-local"
             value={platformScheduledTime}
             onChange={(e) => onUpdateSchedule?.(pId, e.target.value)}
-            className="flex-1 px-2.5 py-1 bg-white dark:bg-slate-800 text-[11px] border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-amber-500 rounded-lg text-slate-700 dark:text-slate-300 font-sans cursor-pointer"
+            className="flex-1 px-2.5 py-1 bg-white dark:bg-slate-800 text-xs border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-amber-500 rounded-lg text-slate-700 dark:text-slate-300 font-sans cursor-pointer"
           />
           {platformScheduledTime && (
             <button
               onClick={() => onUpdateSchedule?.(pId, '')}
-              className="px-2 py-1 text-[10px] text-rose-600 hover:text-rose-700 bg-rose-50 dark:bg-rose-950/20 rounded font-semibold transition-all cursor-pointer"
+              className="px-2 py-1 text-xs text-rose-600 hover:text-rose-700 bg-rose-50 dark:bg-rose-950/20 rounded transition-all cursor-pointer"
             >
               {t.clearTimeBtn}
             </button>
@@ -461,10 +461,10 @@ function PlatformCard({
         {isPlatLoading ? (
           <div className="absolute inset-0 bg-slate-100/90 dark:bg-slate-950/90 flex flex-col items-center justify-center p-6 text-center z-10">
             <div className="relative flex items-center justify-center mb-3">
-              <div className="w-9 h-9 rounded-full border-4 border-slate-200 dark:border-slate-805 border-t-slate-900 dark:border-t-amber-400 animate-spin" />
-              <Sparkles className="w-3.5 h-3.5 absolute text-amber-505" />
+              <div className="w-9 h-9 rounded-full border-4 border-slate-200 dark:border-slate-800 border-t-slate-900 dark:border-t-amber-400 animate-spin" />
+              <Sparkles className="w-3.5 h-3.5 absolute text-amber-500" />
             </div>
-            <span className="text-[10.5px] font-bold text-slate-705 dark:text-slate-350">{t.imageLoadingLabel}</span>
+            <span className="text-[10.5px] text-slate-700 dark:text-slate-350">{t.imageLoadingLabel}</span>
           </div>
         ) : draft.imageUrl ? (
           <>
@@ -472,10 +472,10 @@ function PlatformCard({
               src={draft.imageUrl}
               alt={`${name} graphics`}
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover shadow-sm transition-transform duration-500 hover:scale-[1.03]"
+              className="w-full h-full object-cover shadow-sm transition-transform duration-500"
             />
             {/* Overlay File Uploader */}
-            <label className="absolute bottom-2.5 right-2.5 bg-slate-90o bg-slate-950/80 hover:bg-slate-950 text-white rounded-lg px-2.5 py-1.5 text-[10px] font-bold flex items-center gap-1 shadow-md transition-all cursor-pointer border border-white/5">
+            <label className="absolute bottom-2.5 right-2.5 bg-slate-90o bg-slate-950/80 hover:bg-slate-950 text-white rounded-lg px-2.5 py-1.5 text-xs flex items-center gap-1 transition-all cursor-pointer border border-white/5">
               <Upload className="w-3 h-3" />
               <span>{t.uploadImageBtn}</span>
               <input
@@ -488,12 +488,12 @@ function PlatformCard({
           </>
         ) : (
           <div className="p-6 text-center flex flex-col items-center max-w-xs">
-            <div className="p-3 bg-white dark:bg-slate-800 rounded-xl text-slate-400 mb-2 border border-slate-200/50 dark:border-slate-705">
+            <div className="p-3 bg-white dark:bg-slate-800 rounded-xl text-slate-400 mb-2 border border-slate-200/50 dark:border-slate-700">
               <Image className="w-5 h-5 text-slate-400" />
             </div>
-            <p className="text-[11px] font-bold text-slate-700 dark:text-slate-300">{t.noImageYet}</p>
+            <p className="text-xs text-slate-700 dark:text-slate-300">{t.noImageYet}</p>
             
-            <label className="mt-3 cursor-pointer inline-flex items-center gap-1.5 transition-all text-[10.5px] font-bold text-slate-800 dark:text-amber-400 bg-slate-200/50 dark:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
+            <label className="mt-3 cursor-pointer inline-flex items-center gap-1.5 transition-all text-[10.5px] text-slate-800 dark:text-amber-400 bg-slate-200/50 dark:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
               <Upload className="w-3.5 h-3.5" />
               <span>{t.uploadPhotoBtn}</span>
               <input
@@ -508,28 +508,28 @@ function PlatformCard({
       </div>
 
       {/* Mock statistics footer */}
-      <div className="px-4 py-2 bg-slate-50/50 dark:bg-slate-900/40 border-b border-slate-150 dark:border-slate-800 flex items-center text-[10px] text-slate-400 font-semibold select-none">
+      <div className="px-4 py-2 bg-slate-50/50 dark:bg-slate-900/40 border-b border-slate-150 dark:border-slate-800 flex items-center text-xs text-slate-400 select-none">
         👍 ❤️ <span className="ml-1.5">{actionsMock}</span>
       </div>
 
-      <div className="px-1 py-1 grid grid-cols-4 divide-x divide-slate-100 dark:divide-slate-800 border-b border-slate-105 dark:border-slate-800 select-none">
-        <button className="py-1 text-[10px] font-bold text-slate-450 hover:bg-slate-50 dark:hover:bg-slate-850 rounded-md flex items-center justify-center gap-1 cursor-pointer">
+      <div className="px-1 py-1 grid grid-cols-4 divide-x divide-slate-100 dark:divide-slate-800 border-b border-slate-100 dark:border-slate-800 select-none">
+        <button className="py-1 text-xs text-slate-450 hover:bg-slate-50 dark:hover:bg-slate-850 rounded-md flex items-center justify-center gap-1 cursor-pointer">
           <ThumbsUp className="w-3 h-3" /> <span>Like</span>
         </button>
-        <button className="py-1 text-[10px] font-bold text-slate-455 hover:bg-slate-50 dark:hover:bg-slate-850 rounded-md flex items-center justify-center gap-1 cursor-pointer">
+        <button className="py-1 text-xs text-slate-450 hover:bg-slate-50 dark:hover:bg-slate-850 rounded-md flex items-center justify-center gap-1 cursor-pointer">
           <MessageCircle className="w-3 h-3" /> <span>{t.interactionsLikes}</span>
         </button>
-        <button className="py-1 text-[10px] font-bold text-slate-455 hover:bg-slate-50 dark:hover:bg-slate-850 rounded-md flex items-center justify-center gap-1 cursor-pointer">
+        <button className="py-1 text-xs text-slate-450 hover:bg-slate-50 dark:hover:bg-slate-850 rounded-md flex items-center justify-center gap-1 cursor-pointer">
           <Repeat2 className="w-3 h-3" /> <span>{t.interactionsComments}</span>
         </button>
-        <button className="py-1 text-[10px] font-bold text-slate-455 hover:bg-slate-50 dark:hover:bg-slate-850 rounded-md flex items-center justify-center gap-1 cursor-pointer">
+        <button className="py-1 text-xs text-slate-450 hover:bg-slate-50 dark:hover:bg-slate-850 rounded-md flex items-center justify-center gap-1 cursor-pointer">
           <Send className="w-3 h-3" /> <span>Send</span>
         </button>
       </div>
 
       {/* Visual art directive prompt tweaking */}
       <div className="p-4 bg-slate-50/40 dark:bg-slate-850/20 select-none">
-        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">
+        <label className="block text-xs text-slate-400 mb-1.5">
           🎨 {t.artPromptLabel}
         </label>
         <div className="flex gap-2">
@@ -537,13 +537,13 @@ function PlatformCard({
             type="text"
             value={artPrompt}
             onChange={(e) => setArtPrompt(e.target.value)}
-            className="flex-1 px-2.5 py-1.5 bg-white dark:bg-slate-800 text-[11px] border border-slate-200 dark:border-slate-700/80 focus:outline-none focus:ring-1 focus:ring-amber-500 rounded-lg text-slate-705 dark:text-slate-202"
+            className="flex-1 px-2.5 py-1.5 bg-white dark:bg-slate-800 text-xs border border-slate-200 dark:border-slate-700/80 focus:outline-none focus:ring-1 focus:ring-amber-500 rounded-lg text-slate-700 dark:text-slate-200"
             placeholder={t.artPromptPlaceholder}
           />
           <button
             onClick={() => onRegenerateImage(pId, artPrompt, aspectRatio)}
             disabled={isPlatLoading}
-            className="p-1.5 bg-slate-900 hover:bg-slate-880 dark:bg-slate-100 hover:dark:bg-white text-white dark:text-slate-950 rounded-lg cursor-pointer flex items-center justify-center transition-colors disabled:opacity-50"
+            className="p-1.5 bg-slate-900 hover:bg-slate-900 dark:bg-slate-100 hover:dark:bg-white text-white dark:text-slate-950 rounded-lg cursor-pointer flex items-center justify-center transition-colors disabled:opacity-50"
             title={t.regenerateImageBtn}
           >
             <RefreshCw className="w-3.5 h-3.5" />

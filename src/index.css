@@ -1,17 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
 @import "tailwindcss";
 
+/* Ressoa by amplia: identidade visual (cores Ardósia e Âmbar, fonte Max Regular).
+   O modo escuro segue a classe .dark (o botão de tema), não o sistema operativo. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'Max';
+  src: url('/fonts/Max-Regular.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  /* A Max não tem €: a Inter só entra nesses caracteres */
+  --font-sans: "Max", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Max", "Inter", sans-serif;
+  --font-mono: "Max", "Inter", sans-serif;
+  --color-slate-50: #F5F7F9;
+  --color-slate-100: #EEF1F4;
+  --color-slate-200: #DDE2E7;
+  --color-slate-300: #C3CBD3;
+  --color-slate-400: #8A9BA8;
+  --color-slate-500: #5B6670;
+  --color-slate-600: #48525C;
+  --color-slate-700: #3A4650;
+  --color-slate-800: #2A343E;
+  --color-slate-900: #1F2933;
+  --color-slate-950: #141B22;
+  --color-slate-150: #E5E9ED;  /* tom intermédio usado no código */
+  --color-slate-250: #D0D6DD;  /* tom intermédio usado no código */
+  --color-slate-350: #A6B3BD;  /* tom intermédio usado no código */
+  --color-slate-450: #72808C;  /* tom intermédio usado no código */
+  --color-slate-550: #515C66;  /* tom intermédio usado no código */
+  --color-slate-650: #414C56;  /* tom intermédio usado no código */
+  --color-slate-750: #323D47;  /* tom intermédio usado no código */
+  --color-slate-850: #242E38;  /* tom intermédio usado no código */
+  --color-amber-50: #FEF8EC;
+  --color-amber-100: #FDEBC8;
+  --color-amber-200: #FBD68E;
+  --color-amber-300: #F8BF56;
+  --color-amber-400: #F5A524;
+  --color-amber-500: #E08A0B;
+  --color-amber-600: #B86F05;
+  --color-amber-700: #9A5B00;
+  --color-amber-800: #7A4806;
+  --color-amber-900: #643C0A;
+  --color-amber-950: #3A2003;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #f8fafc;
-  color: #0f172a;
+  font-weight: 400;
+  font-synthesis: none;
+  background-color: var(--color-slate-50);
+  color: var(--color-slate-900);
 }
+/* A Max só tem um peso: nunca negrito artificial */
+b, strong, h1, h2, h3, h4, h5, h6, th, label, button { font-weight: 400; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -24,10 +72,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--color-slate-300);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--color-slate-400);
 }

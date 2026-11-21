@@ -95,8 +95,8 @@ export interface TranslationSchema {
 
 export const translations: Record<AppLanguage, TranslationSchema> = {
   'pt-PT': {
-    appName: 'Social Content Generator',
-    appSubtitle: 'Agendador de Conteúdo Transplataforma',
+    appName: 'Ressoa',
+    appSubtitle: 'Uma ideia, todas as redes',
     loginButton: 'Entrar',
     logoutButton: 'Terminar Sessão',
     profileButton: 'Meu Perfil',
@@ -105,7 +105,7 @@ export const translations: Record<AppLanguage, TranslationSchema> = {
     uiLanguageLabel: 'Idioma da UI',
     
     loginTitle: 'Iniciar Sessão',
-    loginSubtitle: 'Aceda à sua conta Social Content Generator para gerir credenciais',
+    loginSubtitle: 'Aceda à sua conta Ressoa para gerir credenciais',
     emailLabel: 'Endereço de E-mail',
     passwordLabel: 'Palavra-passe',
     emailPlaceholder: 'exemplo@empresa.pt',
@@ -121,7 +121,7 @@ export const translations: Record<AppLanguage, TranslationSchema> = {
     saveProfileBtn: 'Guardar Configurações',
     backToDashboard: 'Voltar ao Painel',
     sectionAccounts: 'Contas e Acessos Sociais',
-    sectionAccountsDesc: 'Insira o nome de utilizador e a palavra-passe que o Nano Banana usará para indexar os canais.',
+    sectionAccountsDesc: 'Insira o nome de utilizador e a palavra-passe que o Ressoa usará para indexar os canais.',
     sectionApiKeys: 'Chaves de API das Plataformas',
     sectionApiKeysDesc: 'Chaves secretas para personalização e geração avançada autónoma.',
     fieldChannelUsername: 'Utilizador / Link',
@@ -180,8 +180,8 @@ export const translations: Record<AppLanguage, TranslationSchema> = {
     successTitle: 'Sucesso',
   },
   'en': {
-    appName: 'Social Content Generator',
-    appSubtitle: 'Cross-Platform Content Scheduler',
+    appName: 'Ressoa',
+    appSubtitle: 'One idea, every network',
     loginButton: 'Login',
     logoutButton: 'Logout',
     profileButton: 'My Profile',
@@ -190,7 +190,7 @@ export const translations: Record<AppLanguage, TranslationSchema> = {
     uiLanguageLabel: 'UI Language',
 
     loginTitle: 'Sign In',
-    loginSubtitle: 'Log in to your Social Content Generator account to manage credentials',
+    loginSubtitle: 'Log in to your Ressoa account to manage credentials',
     emailLabel: 'Email Address',
     passwordLabel: 'Password',
     emailPlaceholder: 'you@company.com',
@@ -265,8 +265,8 @@ export const translations: Record<AppLanguage, TranslationSchema> = {
     successTitle: 'Success',
   },
   'es': {
-    appName: 'Social Content Generator',
-    appSubtitle: 'Sintonizador de Contenido Multiplataforma',
+    appName: 'Ressoa',
+    appSubtitle: 'Una idea, todas las redes',
     loginButton: 'Iniciar Sesión',
     logoutButton: 'Cerrar Sesión',
     profileButton: 'Mi Perfil',
@@ -275,7 +275,7 @@ export const translations: Record<AppLanguage, TranslationSchema> = {
     uiLanguageLabel: 'Idioma de Interfaz',
 
     loginTitle: 'Iniciar Sesión',
-    loginSubtitle: 'Inicie sesión en su cuenta de Social Content Generator para gestionar credenciales',
+    loginSubtitle: 'Inicie sesión en su cuenta de Ressoa para gestionar credenciales',
     emailLabel: 'Correo Electrónico',
     passwordLabel: 'Contraseña',
     emailPlaceholder: 'correo@empresa.com',
