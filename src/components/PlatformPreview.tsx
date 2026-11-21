@@ -397,7 +397,7 @@ function PlatformCard({
 
       {/* AI translation bar */}
       <div className="mx-4 mb-3.5 p-2 bg-slate-50 dark:bg-slate-850 border border-slate-150 dark:border-slate-800 rounded-xl flex items-center justify-between gap-1.5 select-none">
-        <span className="text-[9.5px] text-slate-600 dark:text-slate-400 flex items-center gap-1">
+        <span className="text-xs text-slate-600 dark:text-slate-400 flex items-center gap-1">
           <Globe className="w-3 h-3 text-amber-600" /> {t.aiTranslateLabel}
         </span>
         <div className="flex items-center gap-1.5">
@@ -462,9 +462,9 @@ function PlatformCard({
           <div className="absolute inset-0 bg-slate-100/90 dark:bg-slate-950/90 flex flex-col items-center justify-center p-6 text-center z-10">
             <div className="relative flex items-center justify-center mb-3">
               <div className="w-9 h-9 rounded-full border-4 border-slate-200 dark:border-slate-800 border-t-slate-900 dark:border-t-amber-400 animate-spin" />
-              <Sparkles className="w-3.5 h-3.5 absolute text-amber-500" />
+              <Sparkles className="w-3.5 h-3.5 absolute text-amber-600" />
             </div>
-            <span className="text-[10.5px] text-slate-700 dark:text-slate-350">{t.imageLoadingLabel}</span>
+            <span className="text-xs text-slate-700 dark:text-slate-350">{t.imageLoadingLabel}</span>
           </div>
         ) : draft.imageUrl ? (
           <>
@@ -493,7 +493,7 @@ function PlatformCard({
             </div>
             <p className="text-xs text-slate-700 dark:text-slate-300">{t.noImageYet}</p>
             
-            <label className="mt-3 cursor-pointer inline-flex items-center gap-1.5 transition-all text-[10.5px] text-slate-800 dark:text-amber-400 bg-slate-200/50 dark:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
+            <label className="mt-3 cursor-pointer inline-flex items-center gap-1.5 transition-all text-xs text-slate-800 dark:text-amber-400 bg-slate-200/50 dark:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
               <Upload className="w-3.5 h-3.5" />
               <span>{t.uploadPhotoBtn}</span>
               <input

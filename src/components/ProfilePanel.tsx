@@ -87,7 +87,7 @@ export default function ProfilePanel({ t, credentials, onSave, onNavigate }: Pro
 
       {statusMsg && (
         <div className="mb-6 p-4 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/50 text-emerald-800 dark:text-emerald-200 rounded-xl text-xs flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+          <div className="w-2 h-2 rounded-full bg-emerald-500" />
           <span>{statusMsg}</span>
         </div>
       )}
@@ -317,8 +317,8 @@ export default function ProfilePanel({ t, credentials, onSave, onNavigate }: Pro
               </div>
             </div>
             
-            <div className="flex items-start gap-2 text-[10.5px] text-slate-400 dark:text-slate-500 leading-normal">
-              <AlertCircle className="w-4 h-4 shrink-0 text-amber-500/80" />
+            <div className="flex items-start gap-2 text-xs text-slate-400 dark:text-slate-500 leading-normal">
+              <AlertCircle className="w-4 h-4 shrink-0 text-amber-600" />
               <span>{t.customGeminiDesc}</span>
             </div>
           </div>

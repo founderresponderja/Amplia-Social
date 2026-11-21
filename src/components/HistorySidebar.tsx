@@ -109,24 +109,24 @@ export default function HistorySidebar({
                     draft.scheduledTimes.tiktok
                   ) ? (
                     <div className="flex flex-wrap items-center gap-1 mt-1.5 bg-slate-50 dark:bg-slate-950/40 p-1 rounded-lg border border-slate-100 dark:border-slate-850">
-                      <span className="inline-flex items-center gap-1 text-[8px] text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-1.5 py-0.5 rounded">
+                      <span className="inline-flex items-center gap-1 text-xs text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-1.5 py-0.5 rounded">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                         {t.scheduledBadge}
                       </span>
                       {draft.scheduledTimes.linkedin && (
-                        <span className="text-[8px] px-1 bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 rounded border border-blue-100/50 dark:border-blue-900/50">Li</span>
+                        <span className="text-xs px-1 bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 rounded border border-blue-100/50 dark:border-blue-900/50">Li</span>
                       )}
                       {draft.scheduledTimes.twitter && (
-                        <span className="text-[8px] px-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-300 rounded border border-slate-200/30 dark:border-slate-700/30">𝕏</span>
+                        <span className="text-xs px-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-300 rounded border border-slate-200/30 dark:border-slate-700/30">𝕏</span>
                       )}
                       {draft.scheduledTimes.instagram && (
-                        <span className="text-[8px] px-1 bg-pink-50 dark:bg-pink-950/50 text-pink-600 dark:text-pink-400 rounded border border-pink-100/50 dark:border-pink-900/50">Ig</span>
+                        <span className="text-xs px-1 bg-pink-50 dark:bg-pink-950/50 text-pink-600 dark:text-pink-400 rounded border border-pink-100/50 dark:border-pink-900/50">Ig</span>
                       )}
                       {draft.scheduledTimes.facebook && (
-                        <span className="text-[8px] px-1 bg-indigo-50 dark:bg-indigo-950/50 text-slate-650 dark:text-indigo-400 rounded border border-indigo-100/50 dark:border-indigo-900/50">Fb</span>
+                        <span className="text-xs px-1 bg-indigo-50 dark:bg-indigo-950/50 text-slate-650 dark:text-indigo-400 rounded border border-indigo-100/50 dark:border-indigo-900/50">Fb</span>
                       )}
                       {draft.scheduledTimes.tiktok && (
-                        <span className="text-[8px] px-1 bg-teal-50 dark:bg-teal-950/50 text-teal-650 dark:text-teal-400 rounded border border-teal-100/50 dark:border-teal-900/50">Tt</span>
+                        <span className="text-xs px-1 bg-teal-50 dark:bg-teal-950/50 text-teal-650 dark:text-teal-400 rounded border border-teal-100/50 dark:border-teal-900/50">Tt</span>
                       )}
                     </div>
                   ) : null}

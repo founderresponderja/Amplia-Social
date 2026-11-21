@@ -135,7 +135,7 @@ export default function ComposerPanel({ onGenerate, isLoading, currentLang }: Co
                 type="button"
                 onClick={() => setIdea(tpl.text)}
                 disabled={isLoading}
-                className="text-[10.5px] bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-650 dark:text-slate-300 px-2.5 py-1 rounded-md transition-all cursor-pointer disabled:opacity-50"
+                className="text-xs bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-750 text-slate-650 dark:text-slate-300 px-2.5 py-1 rounded-md transition-all cursor-pointer disabled:opacity-50"
               >
                 {tpl.label}
               </button>
@@ -229,7 +229,7 @@ export default function ComposerPanel({ onGenerate, isLoading, currentLang }: Co
                   disabled={isLoading}
                 >
                   <span className="text-xs leading-tight">{label}</span>
-                  <span className="text-[9.5px] text-slate-400 dark:text-slate-500 font-normal leading-tight mt-1 max-w-[124px] overflow-hidden truncate">
+                  <span className="text-xs text-slate-400 dark:text-slate-500 font-normal leading-tight mt-1 max-w-[124px] overflow-hidden truncate">
                     {desc}
                   </span>
                 </button>
